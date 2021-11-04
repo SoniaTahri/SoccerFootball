@@ -1,0 +1,77 @@
+
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Add Team</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <form class="probootstrap-form" [formGroup]="addTeamForm">
+            <div class="form-group">
+              <input type="text" id="teamName" class="form-control" placeholder="Team name"
+                formControlName="teamName">
+            </div>
+            <div>
+              <div
+                *ngIf="addTeamForm.controls['teamName'].invalid && (addTeamForm.controls['teamName'].touched || addTeamForm.controls['teamName'].dirty)">
+                <div *ngIf="addTeamForm.controls['teamName'].errors.required" style="color: red;">Team Name is required
+                </div>
+                <div *ngIf="addTeamForm.controls['teamName'].errors.minlength" style="color: red;" 1>Team Name must be at least 4 caracters</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="stadium" class="form-control" placeholder="Stadium" formControlName="stadium">
+            </div>
+            <div>
+              <div
+                *ngIf="addTeamForm.controls['stadium'].invalid && (addTeamForm.controls['stadium'].touched || addTeamForm.controls['stadium'].dirty)">
+                <div *ngIf="addTeamForm.controls['stadium'].errors.required" style="color: red;">Stadium is
+                  required</div>
+                <div *ngIf="addTeamForm.controls['stadium'].errors.minlength" style="color: red;">Stadium must be
+                  at least 4 caracters</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <input type="text" id="foundation" class="form-control" placeholder="Foundation"
+                formControlName="foundation">
+            </div>
+            <div>
+              <div
+                *ngIf="addTeamForm.controls['foundation'].invalid && (addTeamForm.controls['foundation'].touched || addTeamForm.controls['foundation'].dirty)">
+                <div *ngIf="addTeamForm.controls['foundation'].errors.required" style="color: red;">foundation is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="number" id="owner" class="form-control" placeholder="Owner" formControlName="owner">
+            </div>
+            <div>
+              <div
+                *ngIf="addTeamForm.controls['owner'].invalid && (addTeamForm.controls['owner'].touched || addTeamForm.controls['owner'].dirty)">
+                <div *ngIf="addTeamForm.controls['owner'].errors.required" style="color: red;">owner is required</div>
+                <div *ngIf="addTeamForm.controls['owner'].errors.minlength" style="color: red;">owner must be at least 4 caracters
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4">
+                <button class="btn btn-lg btn-primary btn-block" (click)="addTeam()"> Add Team </button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+  
+      </div>
+    </div>
+  </div>

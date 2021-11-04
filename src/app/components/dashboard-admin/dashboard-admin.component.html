@@ -1,0 +1,39 @@
+
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Dashboard Admin</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">Users</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="player-tab" data-toggle="tab" href="#player" role="tab" aria-controls="player" aria-selected="false">Players</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="match-tab" data-toggle="tab" href="#match" role="tab" aria-controls="match" aria-selected="false">Matches</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="stade-tab" data-toggle="tab" href="#stade" role="tab" aria-controls="stade" aria-selected="false">Staduims</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+      <app-admin-users></app-admin-users>
+    </div>
+    <div class="tab-pane fade" id="player" role="tabpanel" aria-labelledby="player-tab">
+     <app-admin-players></app-admin-players>
+    </div>
+    <div class="tab-pane fade" id="match" role="tabpanel" aria-labelledby="match-tab">
+       <app-admin-matches></app-admin-matches>
+    </div>
+    <div class="tab-pane fade" id="stade" role="tabpanel" aria-labelledby="stade-tab">
+       <app-admin-stadiums></app-admin-stadiums>
+    </div>
+  </div>

@@ -1,0 +1,94 @@
+
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">{{title | titlecase}} Player</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form class="probootstrap-form" [formGroup]="addPlayerForm">
+            <div class="form-group">
+              <input type="text" id="firstName" class="form-control" placeholder="First name" [(ngModel)]="player.firstName"
+                formControlName="firstName">
+            </div>
+            <div>
+              <div
+                *ngIf="addPlayerForm.controls['firstName'].invalid && (addPlayerForm.controls['firstName'].touched || addPlayerForm.controls['firstName'].dirty)">
+                <div *ngIf="addPlayerForm.controls['firstName'].errors.required" style="color: red;">First Name is required
+                </div>
+                <div *ngIf="addPlayerForm.controls['firstName'].errors.minlength" style="color: red;" 1>First Name must be at least 4 caracters</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="lastName" class="form-control" placeholder="Last name" [(ngModel)]="player.lastName" formControlName="lastName">
+            </div>
+            <div>
+              <div
+                *ngIf="addPlayerForm.controls['lastName'].invalid && (addPlayerForm.controls['lastName'].touched || addPlayerForm.controls['lastName'].dirty)">
+                <div *ngIf="addPlayerForm.controls['lastName'].errors.required" style="color: red;">Last Name is
+                  required</div>
+                <div *ngIf="addPlayerForm.controls['lastName'].errors.minlength" style="color: red;">Last Name must be
+                  at least 4 caracters</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <input type="text" id="poste" class="form-control" placeholder="Poste" [(ngModel)]="player.poste"
+                formControlName="poste">
+            </div>
+            <div>
+              <div
+                *ngIf="addPlayerForm.controls['poste'].invalid && (addPlayerForm.controls['poste'].touched || addPlayerForm.controls['poste'].dirty)">
+                <div *ngIf="addPlayerForm.controls['poste'].errors.required" style="color: red;">poste is required
+                </div>
+                <div *ngIf="addPlayerForm.controls['poste'].errors.minlength" style="color: red;">Last Name must be
+                    at least 4 caracters
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="number" id="age" class="form-control" placeholder="Age" [(ngModel)]="player.age"formControlName="age">
+            </div>
+            <div>
+              <div
+                *ngIf="addPlayerForm.controls['age'].invalid && (addPlayerForm.controls['age'].touched || addPlayerForm.controls['age'].dirty)">
+                <div *ngIf="addPlayerForm.controls['age'].errors.required" style="color: red;">Age is required</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <input type="number" id="number" class="form-control" placeholder="T-shirt number"
+              [(ngModel)]="player.number"
+                formControlName="number">
+            </div>
+            <div>
+              <div
+                *ngIf="addPlayerForm.controls['number'].invalid && (addPlayerForm.controls['number'].touched || addPlayerForm.controls['number'].dirty)">
+                <div *ngIf="addPlayerForm.controls['number'].errors.required" style="color: red;">T-shirt number is required</div>
+            </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4">
+                <button class="btn btn-lg btn-success btn-block" (click)="getPdf()">Get your PDF</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4">
+                <button class="btn btn-lg btn-primary btn-block" (click)="addPlayer(addPlayerForm.value)"> {{title | titlecase}} Player </button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+  
+      </div>
+    </div>
+  </div>
